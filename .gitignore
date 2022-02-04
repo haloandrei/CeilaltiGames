@@ -13,6 +13,7 @@ Server/__pycache__/
 /Assets/*
 !/Assets/Scripts
 !/Assets/Scenes
+!/Assets/Media
 
 Logs/
 Library/
