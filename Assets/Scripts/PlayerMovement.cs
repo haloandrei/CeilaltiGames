@@ -5,13 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController2D controller;
-
+    CharacterController2D controller;
     float runSpeed = 40f;
-
     float horizontalMove = 0f;
     bool jump = false;
-    
+
+    private void Start()
+    {
+        controller = GetComponent<CharacterController2D>();
+    }
+
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
