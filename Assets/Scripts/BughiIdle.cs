@@ -4,27 +4,31 @@ using UnityEngine;
 
 public class BughiIdle : MonoBehaviour
 {
-    private int bobbingElipse = 0;
-    float speedMod = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float speedMod = 1;
+    [SerializeField] float distance = 0.5f;
+    bool floatUp = true;
+    float rate = 0;
 
-    // Update is called once per frame
     void Update()
     {
-        if (bobbingElipse <= 100)
+        if (rate <= 1 && floatUp)
         {
-            gameObject.transform.position += Vector3.up * speedMod * Time.deltaTime;
+            rate += Time.deltaTime * speedMod;
+            if (rate > 1)
+            {
+                rate = 1;
+                floatUp = false;
+            }
         }
-        else if (bobbingElipse > 100 && bobbingElipse < 202)
+        if (rate >= 0 && floatUp == false)
         {
-            gameObject.transform.position -= Vector3.up * speedMod * Time.deltaTime;
+            rate -= Time.deltaTime * speedMod;
+            if (rate < 0)
+            {
+                rate = 0;
+                floatUp = true;
+            }
         }
-        else 
-            bobbingElipse = -1;
-        bobbingElipse++;
+        gameObject.transform.localPosition = Vector3.Lerp(Vector3.zero, Vector3.up * distance, rate);
     }
 }
