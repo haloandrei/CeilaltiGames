@@ -13,6 +13,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5887cb14850f4ebbb67f34b424494bb37000/f0/3c8b6473/Input.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -66,6 +69,7 @@
       <updated>1643968647722</updated>
       <workItem from="1643968655222" duration="688000" />
       <workItem from="1643988371591" duration="1922000" />
+      <workItem from="1643990904619" duration="2642000" />
     </task>
     <servers />
   </component>
