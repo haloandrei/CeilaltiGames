@@ -20,8 +20,7 @@ public class BughiAttack : MonoBehaviour
     
         if (attack)
         {
-            
-           transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, timeCount);
+            transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, timeCount);
            timeCount = timeCount + speedMod/(timeCount + 1) * Time.deltaTime; 
            Debug.Log(timeCount);
            if (timeCount > 0.99f)
