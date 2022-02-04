@@ -12,13 +12,12 @@ public class SubjectSpawner : MonoBehaviour
 	public static int bossWave = 10;
 
 	public TextMeshProUGUI waveText;
-	public Vector2 posX, posY;
 	public GameObject mainCamera, player, boss;
 	public float pauseTime, spawnIntervalTime, focusOnBossTime;
 	//public AudioClip boss2Music, bossDefeatedMusic;
 
 	IEnumerator coroutine;
-	Vector2 pos, bossPos;
+	Vector2 bossPos;
 	bool spawningWave, focusedOnBoss;
 
 	void Start()
@@ -80,14 +79,13 @@ public class SubjectSpawner : MonoBehaviour
 		if (waveNumber < bossWave)
 			for (int i = 0; i <= (waveNumber + 1) / 2; ++i)
 			{ // wavenumber + 1 ca sa inceapa cu 2 skeletoni in loc de 1
-				//if (GameOverManager.gameOver)
-				//{
-				//	i--;
-				//	yield return new WaitForSeconds(1);
-				//	continue;
-				//}
-				pos.x = Random.Range(posX.x, posX.y);
-				pos.y = Random.Range(posY.x, posY.y);
+			  //if (GameOverManager.gameOver)
+			  //{
+			  //	i--;
+			  //	yield return new WaitForSeconds(1);
+			  //	continue;
+			  //}
+				var pos = Random.value > 0.5 ? leftSpawn.position : rightSpawn.position;
 
 				Instantiate(subjects[Random.Range(0, subjects.Length)], pos, Quaternion.identity);
 				yield return new WaitForSeconds(spawnIntervalTime);
